@@ -35,7 +35,8 @@ void add(struct list *list1,int k)
             (list1->p)[list1->len-1]=k;
         }
 }
-//this method is working but I think that it will cost a problem in the memorie so I need to try something else;
+//Now I solved the problem by adding an original painter and copying the hall list and freeing the memori each time 
+// the diffrence between the two pointers is more than the half of the size reserved in the memorie.
 int fpop(struct list *l)
 {
 
@@ -52,10 +53,10 @@ if(d>=l->size/2)
     l->op=p2;
     l->p=l->op;
 }
-    int a=l->p[0];
+    l->first=l->p[0];
     l->p+=1;
     l->len-=1;
-    return a;
+    return l->first;
 }
 
 int main()
