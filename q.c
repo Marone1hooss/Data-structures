@@ -7,7 +7,7 @@
         int *p;
         int len;
         int size;
-        int first;
+        char first;
     }list;
 void add(struct list *list1,int k)
 {
@@ -37,7 +37,7 @@ void add(struct list *list1,int k)
 }
 //Now I solved the problem by adding an original painter and copying the hall list and freeing the memori each time 
 // the diffrence between the two pointers is more than the half of the size reserved in the memorie.
-int fpop(struct list *l)
+void pop(struct list *l)
 {
 
 int d=(l->p)-l->op;
@@ -56,6 +56,10 @@ if(d>=l->size/2)
     l->first=l->p[0];
     l->p+=1;
     l->len-=1;
+    return l->first;
+}
+int peak(struct list *l)
+{
     return l->first;
 }
 

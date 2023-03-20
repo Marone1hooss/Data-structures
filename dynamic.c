@@ -22,12 +22,12 @@ void append(struct list *list1,int k)
             free(list1->p);
             list1->p=p2;
             (list1->len)+=1;
-            (list1->p[n+1])=k;
+            (list1->p[n])=k;
         }
         else
         {
             (list1->len)+=1;
-            (list1->p)[list1->len]=k;           
+            (list1->p)[list1->len-1]=k;           
         }
     }
     
