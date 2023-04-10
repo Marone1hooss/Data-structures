@@ -93,7 +93,7 @@ int is_connected_BFS(list ** graph,int n,int e)
 {
     Q *Quee=(Q*)malloc(sizeof(Q));
     Quee->len=0;
-    Quee->size=5;
+    Quee->size=1;
     Quee->op=(int*)malloc((Quee->size) * sizeof(int));
     Quee->p=Quee->op;
     
