@@ -162,12 +162,12 @@ int Min(Nd**root_adr)
             if (root->left->left==NULL)
             {
                 leftRotation(&(root->left));
-                rightRotation(&root);
+                rightRotation(root_adr);
                
 
             }
             else
-                rightRotation(&root);
+                rightRotation(root_adr);
                 
         }
         if (balance < -1)
@@ -175,7 +175,7 @@ int Min(Nd**root_adr)
             if ( root->right->right==NULL)
             {
                 rightRotation(&(root->right));
-                leftRotation(&root);
+                leftRotation(root_adr);
                 
 
             }
@@ -192,6 +192,7 @@ int Min(Nd**root_adr)
 void delete(Nd**root_adr,int k)
 {
     Nd*root=*root_adr;
+    if (root==NULL) return;
     int curent=root->value;
     if (root == NULL)return ;
     if (root->value==k)
@@ -250,6 +251,7 @@ int main()
     insert(&root,4);
     insert(&root,5);
     delete(&root,2);
+    delete(&root,133);
     printf("-------------------------------------------------------\n");
     display(root);
     treefree(root);
