@@ -192,9 +192,8 @@ int Min(Nd**root_adr)
 void delete(Nd**root_adr,int k)
 {
     Nd*root=*root_adr;
-    if (root==NULL) return;
-    int curent=root->value;
     if (root == NULL)return ;
+    int curent=root->value;
     if (root->value==k)
     {
         if(root->right==NULL)
